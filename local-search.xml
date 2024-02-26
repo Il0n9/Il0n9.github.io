@@ -1,0 +1,171 @@
+<?xml version="1.0" encoding="utf-8"?>
+<search>
+  
+  
+  
+  <entry>
+    <title>WUSTCTF2020_level1</title>
+    <link href="/2024/02/25/WUSTCTF2020-level1/"/>
+    <url>/2024/02/25/WUSTCTF2020-level1/</url>
+    
+    <content type="html"><![CDATA[<p>附件两个文件</p><p>将level1加后缀exe,用脱壳工具“Exeinfo PE万能查壳软件”发现没有壳，是64位的。</p><p>用反编译工具IDA（64）打开level1.exe<br>找到main函数跟进并f5反编译</p><img src="/2024/02/25/WUSTCTF2020-level1/%E5%9B%BE%E7%89%871.png" class=""><p>i&amp;1 – 按位与运算，取 2进制整数 i 的最低位，如果最低位是1 则得1，如果最低位是0 则得0。 奇数 i 的最低位 是1，偶数i 的最低位 是0。<br>可写出脚本out &#x3D; [198,232,816,200,1536,300,6144,984,51200,570,92160,1200,565248,756,1474560,800,6291456,1782,65536000]</p><p>for i in range(1,20):<br>    if(i%2!&#x3D;0):<br>        print(chr(out[i-1]&gt;&gt;i),end&#x3D;’’)<br>    else:<br>        print(chr(out[i-1]&#x2F;&#x2F;i),end&#x3D;’’)<br>得flagctf2020{d9-dE6-20c}</p>]]></content>
+    
+    
+    
+    <tags>
+      
+      <tag>ctf</tag>
+      
+    </tags>
+    
+  </entry>
+  
+  
+  
+  <entry>
+    <title>beginCTF real checkin xor</title>
+    <link href="/2024/02/12/beginCTF-real-checkin-xor/"/>
+    <url>/2024/02/12/beginCTF-real-checkin-xor/</url>
+    
+    <content type="html"><![CDATA[<p>一道很直观的xor题</p><img src="/2024/02/12/beginCTF-real-checkin-xor/p1.png" class=""><p>题目已被注释<br>脚本如图</p>]]></content>
+    
+    
+    
+    <tags>
+      
+      <tag>ctf</tag>
+      
+    </tags>
+    
+  </entry>
+  
+  
+  
+  <entry>
+    <title>MRCTF2020_Xor</title>
+    <link href="/2024/02/12/MRCTF2020-Xor/"/>
+    <url>/2024/02/12/MRCTF2020-Xor/</url>
+    
+    <content type="html"><![CDATA[<p>1.查壳。</p><p>无壳，32位。</p><img src="/2024/02/12/MRCTF2020-Xor/%E5%9B%BE%E7%89%871.png" class=""><p>2.查找关键词<br>shift+f12</p><img src="/2024/02/12/MRCTF2020-Xor/%E5%9B%BE%E7%89%872.png" class=""><p>3.跟进</p><img src="/2024/02/12/MRCTF2020-Xor/%E5%9B%BE%E7%89%873.png" class=""><p>4.f5反编译</p><img src="/2024/02/12/MRCTF2020-Xor/%E5%9B%BE%E7%89%874.png" class=""><p>5.写脚本<br>脚本如下<br>from binascii import *</p><p>flag &#x3D; ‘’<br>flag +&#x3D; chr(0x4d ^ 0)</p><p>key &#x3D; ‘SAWB~FXZ:J:&#96;tQJ”N@ bpdd}8g’<br>key &#x3D; b2a_hex(key.encode()).decode()<br>for i in range(len(key)&#x2F;&#x2F;2):<br>    flag +&#x3D; chr(int(key[i*2:(i+1)*2],16)^(i+1))<br>print(flag)<br>flag{@_R3@1ly_E2_R3verse!}</p>]]></content>
+    
+    
+    
+    <tags>
+      
+      <tag>ctf</tag>
+      
+    </tags>
+    
+  </entry>
+  
+  
+  
+  <entry>
+    <title>ACTF2020_新生赛_Include</title>
+    <link href="/2024/02/05/ACTF2020-%E6%96%B0%E7%94%9F%E8%B5%9B-Include/"/>
+    <url>/2024/02/05/ACTF2020-%E6%96%B0%E7%94%9F%E8%B5%9B-Include/</url>
+    
+    <content type="html"><![CDATA[<p>题目提示存在文件包含漏洞，接下来尝试获取flag.php的源码</p><img src="/2024/02/05/ACTF2020-%E6%96%B0%E7%94%9F%E8%B5%9B-Include/%E5%9B%BE%E7%89%871.png" class=""><p>?file&#x3D;php:&#x2F;&#x2F;filter&#x2F;read&#x3D;convert.base64-encode&#x2F;resource&#x3D;flag.php</p><p>这一步是对 flag.php 进行base64编码。如果不进行过滤操作，读取的数据会被当做php代码执行，那么获取的结果就跟第一步一样了。</p><p>将payload上传，得到源码的base64编码：</p><img src="/2024/02/05/ACTF2020-%E6%96%B0%E7%94%9F%E8%B5%9B-Include/%E5%9B%BE%E7%89%872.png" class=""><img src="/2024/02/05/ACTF2020-%E6%96%B0%E7%94%9F%E8%B5%9B-Include/%E5%9B%BE%E7%89%873.png" class=""><p>flag{00eb2ea2-5e5f-4da6-9476-cba096b135df}</p>]]></content>
+    
+    
+    
+    <tags>
+      
+      <tag>ctf</tag>
+      
+    </tags>
+    
+  </entry>
+  
+  
+  
+  <entry>
+    <title>beginCTF misc Tupper</title>
+    <link href="/2024/02/05/beginCTF-misc-Tupper/"/>
+    <url>/2024/02/05/beginCTF-misc-Tupper/</url>
+    
+    <content type="html"><![CDATA[<p>这一道是beginCTF的misc题目<br>下载附件<br>发现是一堆散乱的文本</p><img src="/2024/02/05/beginCTF-misc-Tupper/p1.png" class=""><p>Win+R输入cmd<br>打开命令提示符<br>使用cmd命令<br>type *.txt&gt;&gt;D:\ctf\tupper\flag.txt</p><img src="/2024/02/05/beginCTF-misc-Tupper/p2.png" class=""><p>这个命令可将文本合并在一起<br>即为<br>MTQyNzgxOTM0MzI3MjgwMjYwNDkyOTg1NzQ1NzU1NTc1MzQzMjEwNjIzNDkzNTI1NDM1NjI2NTY3NjY0Njk3MDQwOTI4NzQ2ODgzNTQ2NzkzNzEyMTI0NDQzODIyOTg4MjEzNDIwOTM0NTAzOTg5MDcwOTY5NzYwMDI0NTg4MDc1OTg1MzU3MzUxNzIxMjY2NTc1MDQxMzExNzE2ODQ5MDcxNzMwODY2NTk1MDUxNDM5MjAzMDAwODU4MDg4MDk2NDcyNTY3OTAzODQzNzg1NTM3ODAyODI4OTQyMzk3NTE4OTg2MjAwNDExNDMzODMzMTcwNjQ3MjcxMzY5MDM2MzQ3NzA5MzYzOTg1MTg1NDc5MDA1MTI1NDg0MTk0ODYzNjQ5MTUzOTkyNTM5NDEyNDU5MTEyMDUyNjI0OTM1OTExNTg0OTc3MDgyMTkxMjY0NTM1ODc0NTY2MzczMDI4ODg3MDEzMDMzODIyMTA3NDg2Mjk4MDAwODE4MjE2ODQyODMxODczNjg1NDM2MDE1NTk3Nzg0MzE3MzUwMDY3OTQ3NjE1NDI0MTMwMDY2MjEyMTkyMDczMjI4MDg0NDkyMzIwNTA1Nzg4NTI0MzEzNjE2Nzg3NDUzNTU3NzY5MjExMzIzNTI0MTk5MzE5MDc4MzgyMDUwMDExODQ&#x3D;<br>末尾是等号判断很可能是base64编码</p><p>解密为<br>14278193432728026049298574575557534321062349352543562656766469704092874688354679371212444382298821342093450398907096976002458807598535735172126657504131171684907173086659505143920300085808809647256790384378553780282894239751898620041143383317064727136903634770936398518547900512548419486364915399253941245911205262493591158497708219126453587456637302888701303382210748629800081821684283187368543601559778431735006794761542413006621219207322808449232050578852431361678745355776921132352419931907838205001184</p><p>这涉及到一个塔伯自指公式：塔珀自指公式（Tupper’s Self-Referential Formula）来自于Jeff Tupper在2001年发表的一篇论文，涉及到一个函数 f ( x , y ) f(x,y)f(x,y) ,一个参数 k，和一个图片 a 。<br>f ( x , y ) f(x,y)f(x,y) 对 a aa 中的每一个点 ( x , y ) (x,y)(x,y) 进行判断，决定该点的颜色是0还是1，因此决定了 a 的图案。如果给定不同的 k ，就会得到不同的图案。令人感到惊奇的是，有一个特别的 k，它会使得所得 a  竟然是 f ff 用来做判断的公式本身。下面就是塔珀公式，</p><img src="/2024/02/05/beginCTF-misc-Tupper/p4.png" class=""><p>使用<a href="https://tuppers-formula.ovh/">https://tuppers-formula.ovh/</a><br>网站解出flag</p><img src="/2024/02/05/beginCTF-misc-Tupper/p3.png" class=""><p>begin{T4UUPER!}</p>]]></content>
+    
+    
+    <categories>
+      
+      <category>misc</category>
+      
+    </categories>
+    
+    
+    <tags>
+      
+      <tag>ctf</tag>
+      
+    </tags>
+    
+  </entry>
+  
+  
+  
+  <entry>
+    <title>buuctf simpleRev</title>
+    <link href="/2024/02/05/simpleRev/"/>
+    <url>/2024/02/05/simpleRev/</url>
+    
+    <content type="html"><![CDATA[<p>这是一道很经典的爆破类型题目，最早的笔记，用这次案例拿出来写一篇博客</p><p>将附件下载下来,拖入到查壳工具中</p><img src="/2024/02/05/simpleRev/re1.png" class=""><p>64位且无壳，拖入ida里面</p><img src="/2024/02/05/simpleRev/re2.png" class=""><p>看到Congratulation关键词ctrl+x跟进函数</p><img src="/2024/02/05/simpleRev/re3.png" class=""><p>F5反编译查看伪代码</p><img src="/2024/02/05/simpleRev/re5.png" class=""><img src="/2024/02/05/simpleRev/re6.png" class=""><p>写脚本爆破<br>flag{KLDQCUDFZO}</p>]]></content>
+    
+    
+    <categories>
+      
+      <category>逆向工程</category>
+      
+    </categories>
+    
+    
+    <tags>
+      
+      <tag>ctf</tag>
+      
+    </tags>
+    
+  </entry>
+  
+  
+  
+  <entry>
+    <title>测试文章</title>
+    <link href="/2024/02/04/%E6%B5%8B%E8%AF%95%E6%96%87%E7%AB%A0/"/>
+    <url>/2024/02/04/%E6%B5%8B%E8%AF%95%E6%96%87%E7%AB%A0/</url>
+    
+    <content type="html"><![CDATA[<p>helloworld!</p><img src="/2024/02/04/%E6%B5%8B%E8%AF%95%E6%96%87%E7%AB%A0/test.jpg" class="">]]></content>
+    
+    
+    <categories>
+      
+      <category>ctf</category>
+      
+    </categories>
+    
+    
+    <tags>
+      
+      <tag>原创</tag>
+      
+    </tags>
+    
+  </entry>
+  
+  
+  
+  <entry>
+    <title>Hello World</title>
+    <link href="/2024/02/03/hello-world/"/>
+    <url>/2024/02/03/hello-world/</url>
+    
+    <content type="html"><![CDATA[<p>Welcome to <a href="https://hexo.io/">Hexo</a>! This is your very first post. Check <a href="https://hexo.io/docs/">documentation</a> for more info. If you get any problems when using Hexo, you can find the answer in <a href="https://hexo.io/docs/troubleshooting.html">troubleshooting</a> or you can ask me on <a href="https://github.com/hexojs/hexo/issues">GitHub</a>.</p><h2 id="Quick-Start"><a href="#Quick-Start" class="headerlink" title="Quick Start"></a>Quick Start</h2><h3 id="Create-a-new-post"><a href="#Create-a-new-post" class="headerlink" title="Create a new post"></a>Create a new post</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ hexo new <span class="string">&quot;My New Post&quot;</span></span><br></pre></td></tr></table></figure><p>More info: <a href="https://hexo.io/docs/writing.html">Writing</a></p><h3 id="Run-server"><a href="#Run-server" class="headerlink" title="Run server"></a>Run server</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ hexo server</span><br></pre></td></tr></table></figure><p>More info: <a href="https://hexo.io/docs/server.html">Server</a></p><h3 id="Generate-static-files"><a href="#Generate-static-files" class="headerlink" title="Generate static files"></a>Generate static files</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ hexo generate</span><br></pre></td></tr></table></figure><p>More info: <a href="https://hexo.io/docs/generating.html">Generating</a></p><h3 id="Deploy-to-remote-sites"><a href="#Deploy-to-remote-sites" class="headerlink" title="Deploy to remote sites"></a>Deploy to remote sites</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ hexo deploy</span><br></pre></td></tr></table></figure><p>More info: <a href="https://hexo.io/docs/one-command-deployment.html">Deployment</a></p>]]></content>
+    
+    
+    
+  </entry>
+  
+  
+  
+  
+</search>
