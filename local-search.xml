@@ -4,6 +4,25 @@
   
   
   <entry>
+    <title>BUUCTF_Ping_Ping_Ping</title>
+    <link href="/2024/02/29/BUUCTF-Ping-Ping-Ping/"/>
+    <url>/2024/02/29/BUUCTF-Ping-Ping-Ping/</url>
+    
+    <content type="html"><![CDATA[<img src="/2024/02/29/BUUCTF-Ping-Ping-Ping/%E5%9B%BE%E7%89%871.png" class=""><p>用;结束语句再使用命令ls查看文件</p><img src="/2024/02/29/BUUCTF-Ping-Ping-Ping/%E5%9B%BE%E7%89%872.png" class=""><p>发现flag.php<br>cat一下</p><img src="/2024/02/29/BUUCTF-Ping-Ping-Ping/%E5%9B%BE%E7%89%873.png" class=""><p>发现过滤了空格<br>空格可以用$IFS$9来代替，cat一下index.php<br>发现把flag也过滤了，可以使用base64来获取flag</p><img src="/2024/02/29/BUUCTF-Ping-Ping-Ping/%E5%9B%BE%E7%89%874.png" class=""><img src="/2024/02/29/BUUCTF-Ping-Ping-Ping/%E5%9B%BE%E7%89%875.png" class=""><img src="/2024/02/29/BUUCTF-Ping-Ping-Ping/%E5%9B%BE%E7%89%876.png" class=""><p>flag{eabf0af6-dcbe-4098-b06c-abec9864bb48}</p>]]></content>
+    
+    
+    
+    <tags>
+      
+      <tag>ctf</tag>
+      
+    </tags>
+    
+  </entry>
+  
+  
+  
+  <entry>
     <title>WUSTCTF2020_level1</title>
     <link href="/2024/02/25/WUSTCTF2020-level1/"/>
     <url>/2024/02/25/WUSTCTF2020-level1/</url>

@@ -16,24 +16,29 @@
   <meta name="author" content="Al0n9">
   <meta name="keywords" content="">
   
-    <meta name="description" content="附件两个文件 将level1加后缀exe,用脱壳工具“Exeinfo PE万能查壳软件”发现没有壳，是64位的。 用反编译工具IDA（64）打开level1.exe找到main函数跟进并f5反编译  i&amp;1 – 按位与运算，取 2进制整数 i 的最低位，如果最低位是1 则得1，如果最低位是0 则得0。 奇数 i 的最低位 是1，偶数i 的最低位 是0。可写出脚本out &#x3D; [19">
+    <meta name="description" content="用;结束语句再使用命令ls查看文件  发现flag.phpcat一下  发现过滤了空格空格可以用$IFS$9来代替，cat一下index.php发现把flag也过滤了，可以使用base64来获取flag    flag{eabf0af6-dcbe-4098-b06c-abec9864bb48}">
 <meta property="og:type" content="article">
-<meta property="og:title" content="WUSTCTF2020_level1">
-<meta property="og:url" content="http://example.com/2024/02/25/WUSTCTF2020-level1/index.html">
+<meta property="og:title" content="BUUCTF_Ping_Ping_Ping">
+<meta property="og:url" content="http://example.com/2024/02/29/BUUCTF-Ping-Ping-Ping/index.html">
 <meta property="og:site_name" content="Al0n9">
-<meta property="og:description" content="附件两个文件 将level1加后缀exe,用脱壳工具“Exeinfo PE万能查壳软件”发现没有壳，是64位的。 用反编译工具IDA（64）打开level1.exe找到main函数跟进并f5反编译  i&amp;1 – 按位与运算，取 2进制整数 i 的最低位，如果最低位是1 则得1，如果最低位是0 则得0。 奇数 i 的最低位 是1，偶数i 的最低位 是0。可写出脚本out &#x3D; [19">
+<meta property="og:description" content="用;结束语句再使用命令ls查看文件  发现flag.phpcat一下  发现过滤了空格空格可以用$IFS$9来代替，cat一下index.php发现把flag也过滤了，可以使用base64来获取flag    flag{eabf0af6-dcbe-4098-b06c-abec9864bb48}">
 <meta property="og:locale" content="zh_CN">
-<meta property="og:image" content="http://example.com/2024/02/25/WUSTCTF2020-level1/%E5%9B%BE%E7%89%871.png">
-<meta property="article:published_time" content="2024-02-25T15:10:56.000Z">
-<meta property="article:modified_time" content="2024-02-25T15:15:37.921Z">
+<meta property="og:image" content="http://example.com/2024/02/29/BUUCTF-Ping-Ping-Ping/%E5%9B%BE%E7%89%871.png">
+<meta property="og:image" content="http://example.com/2024/02/29/BUUCTF-Ping-Ping-Ping/%E5%9B%BE%E7%89%872.png">
+<meta property="og:image" content="http://example.com/2024/02/29/BUUCTF-Ping-Ping-Ping/%E5%9B%BE%E7%89%873.png">
+<meta property="og:image" content="http://example.com/2024/02/29/BUUCTF-Ping-Ping-Ping/%E5%9B%BE%E7%89%874.png">
+<meta property="og:image" content="http://example.com/2024/02/29/BUUCTF-Ping-Ping-Ping/%E5%9B%BE%E7%89%875.png">
+<meta property="og:image" content="http://example.com/2024/02/29/BUUCTF-Ping-Ping-Ping/%E5%9B%BE%E7%89%876.png">
+<meta property="article:published_time" content="2024-02-29T07:11:52.000Z">
+<meta property="article:modified_time" content="2024-02-29T07:23:25.355Z">
 <meta property="article:author" content="Al0n9">
 <meta property="article:tag" content="ctf">
 <meta name="twitter:card" content="summary_large_image">
-<meta name="twitter:image" content="http://example.com/2024/02/25/WUSTCTF2020-level1/%E5%9B%BE%E7%89%871.png">
+<meta name="twitter:image" content="http://example.com/2024/02/29/BUUCTF-Ping-Ping-Ping/%E5%9B%BE%E7%89%871.png">
   
   
   
-  <title>WUSTCTF2020_level1 - Al0n9</title>
+  <title>BUUCTF_Ping_Ping_Ping - Al0n9</title>
 
   <link  rel="stylesheet" href="https://lib.baomitu.com/twitter-bootstrap/4.6.1/css/bootstrap.min.css" />
 
@@ -228,7 +233,7 @@
       <div class="banner-text text-center fade-in-up">
         <div class="h2">
           
-            <span id="subtitle" data-typed-text="WUSTCTF2020_level1"></span>
+            <span id="subtitle" data-typed-text="BUUCTF_Ping_Ping_Ping"></span>
           
         </div>
 
@@ -239,8 +244,8 @@
     
       <span class="post-meta">
         <i class="iconfont icon-date-fill" aria-hidden="true"></i>
-        <time datetime="2024-02-25 23:10" pubdate>
-          2024年2月25日 晚上
+        <time datetime="2024-02-29 15:11" pubdate>
+          2024年2月29日 下午
         </time>
       </span>
     
@@ -251,7 +256,7 @@
       <span class="post-meta mr-2">
         <i class="iconfont icon-chart"></i>
         
-          165 字
+          61 字
         
       </span>
     
@@ -262,7 +267,7 @@
         
         
         
-          2 分钟
+          1 分钟
         
       </span>
     
@@ -307,17 +312,21 @@
       <div class="container nopadding-x-md" id="board-ctn">
         <div id="board">
           <article class="post-content mx-auto">
-            <h1 id="seo-header">WUSTCTF2020_level1</h1>
+            <h1 id="seo-header">BUUCTF_Ping_Ping_Ping</h1>
             
             
               <div class="markdown-body">
                 
-                <p>附件两个文件</p>
-<p>将level1加后缀exe,用脱壳工具“Exeinfo PE万能查壳软件”发现没有壳，是64位的。</p>
-<p>用反编译工具IDA（64）打开level1.exe<br>找到main函数跟进并f5反编译</p>
-<img src="/2024/02/25/WUSTCTF2020-level1/%E5%9B%BE%E7%89%871.png" srcset="/img/loading.gif" lazyload class="">
-<p>i&amp;1 – 按位与运算，取 2进制整数 i 的最低位，如果最低位是1 则得1，如果最低位是0 则得0。 奇数 i 的最低位 是1，偶数i 的最低位 是0。<br>可写出脚本out &#x3D; [198,232,816,200,1536,300,6144,984,51200,570,92160,1200,565248,756,1474560,800,6291456,1782,65536000]</p>
-<p>for i in range(1,20):<br>    if(i%2!&#x3D;0):<br>        print(chr(out[i-1]&gt;&gt;i),end&#x3D;’’)<br>    else:<br>        print(chr(out[i-1]&#x2F;&#x2F;i),end&#x3D;’’)<br>得flagctf2020{d9-dE6-20c}</p>
+                <img src="/2024/02/29/BUUCTF-Ping-Ping-Ping/%E5%9B%BE%E7%89%871.png" srcset="/img/loading.gif" lazyload class="">
+<p>用;结束语句再使用命令ls查看文件</p>
+<img src="/2024/02/29/BUUCTF-Ping-Ping-Ping/%E5%9B%BE%E7%89%872.png" srcset="/img/loading.gif" lazyload class="">
+<p>发现flag.php<br>cat一下</p>
+<img src="/2024/02/29/BUUCTF-Ping-Ping-Ping/%E5%9B%BE%E7%89%873.png" srcset="/img/loading.gif" lazyload class="">
+<p>发现过滤了空格<br>空格可以用$IFS$9来代替，cat一下index.php<br>发现把flag也过滤了，可以使用base64来获取flag</p>
+<img src="/2024/02/29/BUUCTF-Ping-Ping-Ping/%E5%9B%BE%E7%89%874.png" srcset="/img/loading.gif" lazyload class="">
+<img src="/2024/02/29/BUUCTF-Ping-Ping-Ping/%E5%9B%BE%E7%89%875.png" srcset="/img/loading.gif" lazyload class="">
+<img src="/2024/02/29/BUUCTF-Ping-Ping-Ping/%E5%9B%BE%E7%89%876.png" srcset="/img/loading.gif" lazyload class="">
+<p>flag{eabf0af6-dcbe-4098-b06c-abec9864bb48}</p>
 
                 
               </div>
@@ -342,8 +351,8 @@
 
   <div class="license-box my-3">
     <div class="license-title">
-      <div>WUSTCTF2020_level1</div>
-      <div>http://example.com/2024/02/25/WUSTCTF2020-level1/</div>
+      <div>BUUCTF_Ping_Ping_Ping</div>
+      <div>http://example.com/2024/02/29/BUUCTF-Ping-Ping-Ping/</div>
     </div>
     <div class="license-meta">
       
@@ -355,7 +364,7 @@
       
         <div class="license-meta-item license-meta-date">
           <div>发布于</div>
-          <div>2024年2月25日</div>
+          <div>2024年2月29日</div>
         </div>
       
       
@@ -387,18 +396,12 @@
                   <article class="post-prev col-6">
                     
                     
-                      <a href="/2024/02/29/BUUCTF-Ping-Ping-Ping/" title="BUUCTF_Ping_Ping_Ping">
-                        <i class="iconfont icon-arrowleft"></i>
-                        <span class="hidden-mobile">BUUCTF_Ping_Ping_Ping</span>
-                        <span class="visible-mobile">上一篇</span>
-                      </a>
-                    
                   </article>
                   <article class="post-next col-6">
                     
                     
-                      <a href="/2024/02/12/beginCTF-real-checkin-xor/" title="beginCTF real checkin xor">
-                        <span class="hidden-mobile">beginCTF real checkin xor</span>
+                      <a href="/2024/02/25/WUSTCTF2020-level1/" title="WUSTCTF2020_level1">
+                        <span class="hidden-mobile">WUSTCTF2020_level1</span>
                         <span class="visible-mobile">下一篇</span>
                         <i class="iconfont icon-arrowright"></i>
                       </a>
