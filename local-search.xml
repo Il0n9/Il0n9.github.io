@@ -4,11 +4,11 @@
   
   
   <entry>
-    <title>BUUCTF_Ping_Ping_Ping</title>
-    <link href="/2024/02/29/BUUCTF-Ping-Ping-Ping/"/>
-    <url>/2024/02/29/BUUCTF-Ping-Ping-Ping/</url>
+    <title>WUSTCTF2020_level1</title>
+    <link href="/2024/02/19/WUSTCTF2020-level1/"/>
+    <url>/2024/02/19/WUSTCTF2020-level1/</url>
     
-    <content type="html"><![CDATA[<img src="/2024/02/29/BUUCTF-Ping-Ping-Ping/%E5%9B%BE%E7%89%871.png" class=""><p>用;结束语句再使用命令ls查看文件</p><img src="/2024/02/29/BUUCTF-Ping-Ping-Ping/%E5%9B%BE%E7%89%872.png" class=""><p>发现flag.php<br>cat一下</p><img src="/2024/02/29/BUUCTF-Ping-Ping-Ping/%E5%9B%BE%E7%89%873.png" class=""><p>发现过滤了空格<br>空格可以用$IFS$9来代替，cat一下index.php<br>发现把flag也过滤了，可以使用base64来获取flag</p><img src="/2024/02/29/BUUCTF-Ping-Ping-Ping/%E5%9B%BE%E7%89%874.png" class=""><img src="/2024/02/29/BUUCTF-Ping-Ping-Ping/%E5%9B%BE%E7%89%875.png" class=""><img src="/2024/02/29/BUUCTF-Ping-Ping-Ping/%E5%9B%BE%E7%89%876.png" class=""><p>flag{eabf0af6-dcbe-4098-b06c-abec9864bb48}</p>]]></content>
+    <content type="html"><![CDATA[<p>附件两个文件</p><p>将level1加后缀exe,用脱壳工具“Exeinfo PE万能查壳软件”发现没有壳，是64位的。</p><p>用反编译工具IDA（64）打开level1.exe<br>找到main函数跟进并f5反编译</p><img src="/2024/02/19/WUSTCTF2020-level1/%E5%9B%BE%E7%89%871.png" class=""><p>i&amp;1 – 按位与运算，取 2进制整数 i 的最低位，如果最低位是1 则得1，如果最低位是0 则得0。 奇数 i 的最低位 是1，偶数i 的最低位 是0。<br>可写出脚本out &#x3D; [198,232,816,200,1536,300,6144,984,51200,570,92160,1200,565248,756,1474560,800,6291456,1782,65536000]</p><p>for i in range(1,20):<br>    if(i%2!&#x3D;0):<br>        print(chr(out[i-1]&gt;&gt;i),end&#x3D;’’)<br>    else:<br>        print(chr(out[i-1]&#x2F;&#x2F;i),end&#x3D;’’)<br>得flagctf2020{d9-dE6-20c}</p>]]></content>
     
     
     
@@ -23,11 +23,11 @@
   
   
   <entry>
-    <title>WUSTCTF2020_level1</title>
-    <link href="/2024/02/25/WUSTCTF2020-level1/"/>
-    <url>/2024/02/25/WUSTCTF2020-level1/</url>
+    <title>BUUCTF_Ping_Ping_Ping</title>
+    <link href="/2024/02/17/BUUCTF-Ping-Ping-Ping/"/>
+    <url>/2024/02/17/BUUCTF-Ping-Ping-Ping/</url>
     
-    <content type="html"><![CDATA[<p>附件两个文件</p><p>将level1加后缀exe,用脱壳工具“Exeinfo PE万能查壳软件”发现没有壳，是64位的。</p><p>用反编译工具IDA（64）打开level1.exe<br>找到main函数跟进并f5反编译</p><img src="/2024/02/25/WUSTCTF2020-level1/%E5%9B%BE%E7%89%871.png" class=""><p>i&amp;1 – 按位与运算，取 2进制整数 i 的最低位，如果最低位是1 则得1，如果最低位是0 则得0。 奇数 i 的最低位 是1，偶数i 的最低位 是0。<br>可写出脚本out &#x3D; [198,232,816,200,1536,300,6144,984,51200,570,92160,1200,565248,756,1474560,800,6291456,1782,65536000]</p><p>for i in range(1,20):<br>    if(i%2!&#x3D;0):<br>        print(chr(out[i-1]&gt;&gt;i),end&#x3D;’’)<br>    else:<br>        print(chr(out[i-1]&#x2F;&#x2F;i),end&#x3D;’’)<br>得flagctf2020{d9-dE6-20c}</p>]]></content>
+    <content type="html"><![CDATA[<img src="/2024/02/17/BUUCTF-Ping-Ping-Ping/%E5%9B%BE%E7%89%871.png" class=""><p>用;结束语句再使用命令ls查看文件</p><img src="/2024/02/17/BUUCTF-Ping-Ping-Ping/%E5%9B%BE%E7%89%872.png" class=""><p>发现flag.php<br>cat一下</p><img src="/2024/02/17/BUUCTF-Ping-Ping-Ping/%E5%9B%BE%E7%89%873.png" class=""><p>发现过滤了空格<br>空格可以用$IFS$9来代替，cat一下index.php<br>发现把flag也过滤了，可以使用base64来获取flag</p><img src="/2024/02/17/BUUCTF-Ping-Ping-Ping/%E5%9B%BE%E7%89%874.png" class=""><img src="/2024/02/17/BUUCTF-Ping-Ping-Ping/%E5%9B%BE%E7%89%875.png" class=""><img src="/2024/02/17/BUUCTF-Ping-Ping-Ping/%E5%9B%BE%E7%89%876.png" class=""><p>flag{eabf0af6-dcbe-4098-b06c-abec9864bb48}</p>]]></content>
     
     
     
